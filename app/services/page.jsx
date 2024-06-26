@@ -8,25 +8,25 @@ const services = [
   {
     num: '01',
     title: 'Web Development',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil  odit.',
+    description: 'Using HTML5, CSS3, JavaScript, React, Node.js, and Next.js to create dynamic, responsive, and user-friendly websites.',
     href: "",
   },
   {
     num: '02',
     title: 'UI/UX Design',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil  odit.',
+    description: 'Crafting appealing interfaces using Figma, Adobe XD, and Sketch. Emphasizing user experience through wireframes, prototypes, and usability testing.',
     href: "",
   },
   {
     num: '03',
     title: 'Mobile Development',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil  odit.',
+    description: 'Developing mobile apps for iOS/Android platforms using React Native. Integrating SQLite for local storage, and tools like Expo and Redux for state management.',
     href: "",
   },
   {
     num: '04',
     title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil  odit.',
+    description: 'Enhancing online visibility through comprehensive SEO strategies. Utilizing tools like Google Analytics, SEMrush, and Ahrefs.',
     href: "",
   }
 ];

@@ -9,15 +9,16 @@ import Stats from "@/components/Stats";
 const Home = () => {
   return (
     <section className="h-full">
+      <link rel="icon" href="./logo.svg" />
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
+            <span className="text-xl">Full-stack Developer</span>
             <h1 className="h1">
               Hello I'm <br /> <span>Marvin <span className="text-accent"> Okongo</span></span>
               </h1>
-              <p className="max-w-[500px] mb-9 text-white/80">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies</p>
+              <p className="max-w-[500px] mb-9 text-white/80">Passionate and innovative thinker experienced in Frontend, Backend and Mobile Development. I also contribute my capabilities to non-profits and open source projects</p>
               {/* btn and specials */}
               <div className="flex flex-col xl:flex-row items-center gap-8:">
                 <Button
