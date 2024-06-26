@@ -13,7 +13,7 @@ import './page.css'
 // abaout data
 const about = {
   title: "About me",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quaerat iure molestias hic necessitatibus tenetur?",
+  description: "As a versatile developer, I specialize in creating robust web and mobile solutions. Reach out or Contact me for job, business or freelance opportunities.",
   info: [
     {
       fieldName: "Name",
@@ -54,7 +54,7 @@ const about = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quaerat facere minus incidunt. Explicabo, omnis.",
+  description: " I have over 5 years of experience delivering top-notch solutions in web and mobile development, ensuring client satisfaction and project success.",
   items: [
     {
       company: "Upwork",
@@ -94,7 +94,7 @@ const experience = {
 const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My Education',
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quaerat facere minus incidunt. Explicabo, omnis.",
+  description: "I've completed training in Full Stack, Mobile, Web Development and Business Information Technology, equipping myself with essential skills for modern digital solutions.",
   items: [
     {
       insitution: "Moringa School",
@@ -122,7 +122,7 @@ const education = {
 //skills data
 const skills = {
   title: "My skills",
-  description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt tempora consequatur odio mollitia, ex a.",
+  description: "Specialized in a range of essential tools and technologies that make me a master of my art",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -278,7 +278,7 @@ const Resume = () => {
               <TabsContent value="about" className="w-full text-center xl:text-left">
                 <div className="flex flex-col gap-[30px]">
                   <h3 className="text-4xl font-bold">{about.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0" > class{about.description}</p>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0" > {about.description}</p>
                   <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                     {about.info.map((item, index) => {
                       return <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
