@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa"
 import { motion } from "framer-motion"
+import emailjs from '@emailjs/browser'
 
 const contactInfo = [
   {
@@ -54,6 +55,15 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [submitError, setSubmitError] = useState(false);
+  const [emailjsInitialized, setEmailjsInitialized] = useState(false);
+
+  // Initialize EmailJS with your user ID
+  useEffect(() => {
+    // Initialize EmailJS with your User ID
+    // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+    emailjs.init("YOUR_USER_ID");
+    setEmailjsInitialized(true);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,18 +91,28 @@ const Contact = () => {
         return;
       }
 
-      // Simulated email submission
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+      if (!emailjsInitialized) {
+        throw new Error("EmailJS is not initialized yet");
+      }
 
-      const result = await response.json();
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstname} ${formData.lastname}`,
+        from_email: formData.email,
+        phone_number: formData.phone || 'Not provided',
+        service_requested: formData.service,
+        message: formData.message
+      };
 
-      if (response.ok) {
+      // Send email using EmailJS
+      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+      const response = await emailjs.send(
+        'YOUR_SERVICE_ID', 
+        'YOUR_TEMPLATE_ID',
+        templateParams
+      );
+
+      if (response.status === 200) {
         setSubmitStatus('Message sent successfully! I will get back to you soon.');
         setSubmitError(false);
         
@@ -106,8 +126,7 @@ const Contact = () => {
           message: ''
         });
       } else {
-        setSubmitStatus(result.message || 'Failed to send message. Please try again.');
-        setSubmitError(true);
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Submission error:', error);
