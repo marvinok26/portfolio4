@@ -25,11 +25,11 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "0720 538 053",
+      fieldValue: "(+254) 738 376 991",
     },
     {
       fieldName: "Email",
-      fieldValue: "okongomarvin971@gmail.com",
+      fieldValue: "marvinsammyke@gmail.com",
     },
     {
       fieldName: "LinkedIn",

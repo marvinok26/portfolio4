@@ -12,14 +12,14 @@ const contactInfo = [
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
-    description: '(+254) 720 538 053',
+    description: '(+254) 738 376 991',
     link: 'tel:+254720538053'
   },
   {
     icon: <FaEnvelope />,
     title: 'Email',
-    description: 'okongomarvin971@gmail.com',
-    link: 'mailto:okongomarvin971@gmail.com'
+    description: 'marvinsammyke@gmail.com',
+    link: 'mailto:marvinsammyke@gmail.com'
   },
   {
     icon: <FaMapMarkedAlt />,
