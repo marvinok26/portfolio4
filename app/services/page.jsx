@@ -7,27 +7,39 @@ import { motion } from "framer-motion"
 const services = [
   {
     num: '01',
-    title: 'Web Development',
-    description: 'Using HTML5, CSS3, JavaScript, React, Node.js, and Next.js to create dynamic, responsive, and user-friendly websites.',
-    href: "",
+    title: 'Full Stack Web Development',
+    description: 'Comprehensive web solutions using modern technologies like React, Next.js, Node.js, and Python (Django/Flask). Creating responsive, scalable applications with robust backend infrastructure and seamless frontend experiences.',
+    href: "/contact",
   },
   {
     num: '02',
-    title: 'UI/UX Design',
-    description: 'Crafting appealing interfaces using Figma, Adobe XD, and Sketch. Emphasizing user experience through wireframes, prototypes, and usability testing.',
-    href: "",
+    title: 'UI/UX Design & Prototyping',
+    description: 'Designing intuitive and visually appealing interfaces using Figma, with a focus on user-centered design principles. Transforming complex ideas into clean, functional, and engaging digital experiences.',
+    href: "/contact",
   },
   {
     num: '03',
-    title: 'Mobile Development',
-    description: 'Developing mobile apps for iOS/Android platforms using React Native. Integrating SQLite for local storage, and tools like Expo and Redux for state management.',
-    href: "",
+    title: 'Mobile App Development',
+    description: 'Cross-platform mobile application development using React Native. Creating performant, user-friendly mobile solutions with seamless integration of backend services, state management, and cloud technologies.',
+    href: "/contact",
   },
   {
     num: '04',
-    title: 'SEO',
-    description: 'Enhancing online visibility through comprehensive SEO strategies. Utilizing tools like Google Analytics, SEMrush, and Ahrefs.',
-    href: "",
+    title: 'Cloud & DevOps Solutions',
+    description: 'Implementing robust cloud infrastructure and DevOps practices using AWS, Docker, and CI/CD pipelines. Optimizing application performance, scalability, and deployment workflows for enterprise-grade solutions.',
+    href: "/contact",
+  },
+  {
+    num: '05',
+    title: 'Database Design & Management',
+    description: 'Expert database solutions using MySQL, MongoDB, and PostgreSQL. Designing efficient data models, implementing advanced querying techniques, and ensuring data integrity and performance.',
+    href: "/contact",
+  },
+  {
+    num: '06',
+    title: 'Technical Consulting',
+    description: 'Providing strategic technical guidance for digital transformation. Offering expertise in technology stack selection, architectural design, and optimizing development processes for startups and enterprises.',
+    href: "/contact",
   }
 ];
 
@@ -41,12 +53,11 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[60px]"
         >
           {services.map((service, index) => {
             return (
               <div key={index} className="flex-1 flex-col justify-center gap-6 group">
-
                 {/* top */}
                 <div className="w-full flex justify-between items-center">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
@@ -67,8 +78,8 @@ const Services = () => {
             );
           })}
         </motion.div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 }
 
