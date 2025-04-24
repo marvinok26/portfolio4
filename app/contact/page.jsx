@@ -14,7 +14,7 @@ const contactInfo = [
     icon: <FaPhoneAlt />,
     title: 'Phone',
     description: '(+254) 738 376 991',
-    link: 'tel:+254720538053'
+    link: 'tel:+254738376991'
   },
   {
     icon: <FaEnvelope />,
@@ -55,14 +55,18 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [submitError, setSubmitError] = useState(false);
-  const [emailjsInitialized, setEmailjsInitialized] = useState(false);
 
-  // Initialize EmailJS with your user ID
+  // Initialize EmailJS
   useEffect(() => {
-    // Initialize EmailJS with your User ID
-    // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
-    emailjs.init("YOUR_USER_ID");
-    setEmailjsInitialized(true);
+    // Initialize EmailJS with your Public Key
+    emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
+    
+    // Debug log to verify environment variables
+    console.log("Environment check:", {
+      publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY ? "Available" : "Missing",
+      serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ? "Available" : "Missing",
+      templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ? "Available" : "Missing"
+    });
   }, []);
 
   const handleChange = (e) => {
@@ -91,11 +95,7 @@ const Contact = () => {
         return;
       }
 
-      if (!emailjsInitialized) {
-        throw new Error("EmailJS is not initialized yet");
-      }
-
-      // Prepare template parameters
+      // Prepare template parameters - including explicit recipient
       const templateParams = {
         from_name: `${formData.firstname} ${formData.lastname}`,
         from_email: formData.email,
@@ -104,13 +104,16 @@ const Contact = () => {
         message: formData.message
       };
 
+      console.log("Sending email with params:", templateParams);
+      
       // Send email using EmailJS
-      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
       const response = await emailjs.send(
-        'YOUR_SERVICE_ID', 
-        'YOUR_TEMPLATE_ID',
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
         templateParams
       );
+
+      console.log("EmailJS response:", response);
 
       if (response.status === 200) {
         setSubmitStatus('Message sent successfully! I will get back to you soon.');
@@ -126,11 +129,51 @@ const Contact = () => {
           message: ''
         });
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(`Failed to send message: ${response.text}`);
       }
     } catch (error) {
       console.error('Submission error:', error);
-      setSubmitStatus('An error occurred. Please try again or contact me directly.');
+      setSubmitStatus(`An error occurred. Please try again or contact me directly.`);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Fallback to server-side sending
+  const handleServerFallback = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('Message sent successfully! I will get back to you soon.');
+        setSubmitError(false);
+        
+        // Reset form
+        setFormData({
+          firstname: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus(result.message || 'Failed to send message. Please try again.');
+        setSubmitError(true);
+      }
+    } catch (error) {
+      console.error('Server fallback error:', error);
+      setSubmitStatus('An error occurred. Please try contacting me directly.');
       setSubmitError(true);
     } finally {
       setIsSubmitting(false);
@@ -237,14 +280,29 @@ const Contact = () => {
                 </div>
               )}
               
-              <Button 
-                type="submit" 
-                size="md" 
-                className="max-w-40 mx-auto" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send message'}
-              </Button>
+              <div className="flex flex-col md:flex-row gap-4 justify-center">
+                <Button 
+                  type="submit" 
+                  size="md" 
+                  className="max-w-40 mx-auto" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send message'}
+                </Button>
+                
+                {submitError && (
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    size="md" 
+                    className="max-w-40 mx-auto" 
+                    onClick={handleServerFallback}
+                    disabled={isSubmitting}
+                  >
+                    Try alternate method
+                  </Button>
+                )}
+              </div>
             </form>
           </div>
           
