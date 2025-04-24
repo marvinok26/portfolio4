@@ -62,11 +62,11 @@ const Contact = () => {
     emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY);
     
     // Debug log to verify environment variables
-    console.log("Environment check:", {
-      publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY ? "Available" : "Missing",
-      serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ? "Available" : "Missing",
-      templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ? "Available" : "Missing"
-    });
+    // console.log("Environment check:", {
+    //   publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY ? "Available" : "Missing",
+    //   serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ? "Available" : "Missing",
+    //   templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ? "Available" : "Missing"
+    // });
   }, []);
 
   const handleChange = (e) => {
@@ -104,7 +104,7 @@ const Contact = () => {
         message: formData.message
       };
 
-      console.log("Sending email with params:", templateParams);
+      // console.log("Sending email with params:", templateParams);
       
       // Send email using EmailJS
       const response = await emailjs.send(
@@ -113,7 +113,7 @@ const Contact = () => {
         templateParams
       );
 
-      console.log("EmailJS response:", response);
+      // console.log("EmailJS response:", response);
 
       if (response.status === 200) {
         setSubmitStatus('Message sent successfully! I will get back to you soon.');
@@ -132,7 +132,7 @@ const Contact = () => {
         throw new Error(`Failed to send message: ${response.text}`);
       }
     } catch (error) {
-      console.error('Submission error:', error);
+      // console.error('Submission error:', error);
       setSubmitStatus(`An error occurred. Please try again or contact me directly.`);
       setSubmitError(true);
     } finally {
@@ -172,7 +172,7 @@ const Contact = () => {
         setSubmitError(true);
       }
     } catch (error) {
-      console.error('Server fallback error:', error);
+      // console.error('Server fallback error:', error);
       setSubmitStatus('An error occurred. Please try contacting me directly.');
       setSubmitError(true);
     } finally {
