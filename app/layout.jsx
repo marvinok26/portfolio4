@@ -28,7 +28,7 @@ export const metadata = {
   ],
   openGraph: {
     title: "Marvin Okongo - Full Stack Developer",
-    description: "Professional portfolio showcasing web and mobile development expertise",
+    description: "Checkout Marvin's professional portfolio showcasing his fullstack web and mobile software development expertise🔥",
     url: "https://marvin-okongo-portfolio.vercel.app",
     siteName: "Marvin Okongo Portfolio",
     images: [
