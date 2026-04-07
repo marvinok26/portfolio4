@@ -1,10 +1,6 @@
 // app/api/contact/route.js
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import getConfig from 'next/config';
-
-// Get server-side config
-const { serverRuntimeConfig } = getConfig();
 
 // Rate limiting implementation (simple in-memory solution)
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour window
@@ -81,7 +77,7 @@ export async function POST(request) {
     // Compose email
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'your-site@example.com',
-      to: process.env.EMAIL_TO || 'marvinsammyke@gmail.com',
+      to: process.env.EMAIL_TO || 'okongomarvin971@gmail.com',
       subject: `Portfolio Contact: ${formData.service} inquiry from ${formData.firstname} ${formData.lastname}`,
       replyTo: formData.email,
       text: `

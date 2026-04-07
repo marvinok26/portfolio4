@@ -7,38 +7,38 @@ import { motion } from "framer-motion"
 const services = [
   {
     num: '01',
-    title: 'Full Stack Web Development',
-    description: 'Comprehensive web solutions using modern technologies like React, Next.js, Node.js, and Python (Django/Flask). Creating responsive, scalable applications with robust backend infrastructure and seamless frontend experiences.',
+    title: 'Backend & Distributed Systems',
+    description: 'Design and build high-performance backend systems using Go (Gin, Fiber, gRPC) and Node.js. Specializing in scalable microservices, event-driven architectures, low-latency APIs, and concurrent systems for fintech, healthcare, and social platforms.',
     href: "/contact",
   },
   {
     num: '02',
-    title: 'UI/UX Design & Prototyping',
-    description: 'Designing intuitive and visually appealing interfaces using Figma, with a focus on user-centered design principles. Transforming complex ideas into clean, functional, and engaging digital experiences.',
+    title: 'Full Stack Web Development',
+    description: 'End-to-end web solutions using React, Vue.js, Next.js, and TypeScript on the frontend, backed by Go, Node.js, Python, or Laravel. Building secure, scalable, production-grade applications with clean API contracts and seamless UX.',
     href: "/contact",
   },
   {
     num: '03',
     title: 'Mobile App Development',
-    description: 'Cross-platform mobile application development using React Native. Creating performant, user-friendly mobile solutions with seamless integration of backend services, state management, and cloud technologies.',
+    description: 'Cross-platform mobile development with Flutter and React Native. Building performant, production-ready apps with real-time features, push notifications, payment integrations, and seamless backend connectivity. Published on App Store and Google Play.',
     href: "/contact",
   },
   {
     num: '04',
     title: 'Cloud & DevOps Solutions',
-    description: 'Implementing robust cloud infrastructure and DevOps practices using AWS, Docker, and CI/CD pipelines. Optimizing application performance, scalability, and deployment workflows for enterprise-grade solutions.',
+    description: 'Containerization with Docker, orchestration with Kubernetes, and CI/CD automation using Jenkins and GitHub Actions. Infrastructure on AWS (EC2, S3, SNS/SQS) with Nginx reverse-proxy, monitoring via Prometheus, Grafana, and OpenTelemetry.',
     href: "/contact",
   },
   {
     num: '05',
-    title: 'Database Design & Management',
-    description: 'Expert database solutions using MySQL, MongoDB, and PostgreSQL. Designing efficient data models, implementing advanced querying techniques, and ensuring data integrity and performance.',
+    title: 'Database Design & Architecture',
+    description: 'Expert data modeling across PostgreSQL, MongoDB, MySQL, Redis, and vector databases. Designing efficient schemas, optimizing query performance, implementing caching strategies, and ensuring data integrity under growing production load.',
     href: "/contact",
   },
   {
     num: '06',
-    title: 'Technical Consulting',
-    description: 'Providing strategic technical guidance for digital transformation. Offering expertise in technology stack selection, architectural design, and optimizing development processes for startups and enterprises.',
+    title: 'Technical Leadership & Consulting',
+    description: 'Strategic technical guidance for startups and enterprises: architecture reviews, technology stack selection, team process improvement, API design standards, and spec-driven development practices to accelerate delivery and reduce engineering risk.',
     href: "/contact",
   }
 ];
@@ -51,7 +51,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+            transition: { delay: 0.8, duration: 0.3, ease: "easeIn" },
           }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[60px]"
         >
@@ -67,7 +67,6 @@ const Services = () => {
                     <BsArrowDownRight className="text-primary text-3xl"/>
                   </Link>
                 </div>
-
                 {/* title */}
                 <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
                 {/* description */}

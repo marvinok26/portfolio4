@@ -12,23 +12,32 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://marvin-okongo-portfolio.vercel.app"),
   title: {
-    template: "%s | Marvin Okongo Portfolio",
-    default: "Marvin Okongo - Full Stack Developer",
+    template: "%s | Marvin Okongo",
+    default: "Marvin Okongo - Senior Software Engineer & Technical Lead",
   },
-  description: "Portfolio of Marvin Okongo, a versatile full-stack developer specializing in web and mobile technologies.",
+  description: "Portfolio of Marvin Okongo — Senior Software Engineer and Technical Lead specializing in Go (Golang) distributed systems, high-performance backend APIs, full-stack web, and cross-platform mobile development.",
   keywords: [
     "Marvin Okongo",
-    "Full Stack Developer", 
-    "Web Development", 
-    "Mobile Development", 
-    "React", 
-    "Next.js", 
-    "Python"
+    "Senior Software Engineer",
+    "Technical Lead",
+    "Go Developer",
+    "Golang",
+    "Backend Engineer",
+    "Distributed Systems",
+    "Microservices",
+    "Full Stack Developer",
+    "Flutter",
+    "React Native",
+    "Node.js",
+    "TypeScript",
+    "DevOps",
+    "Nairobi Kenya",
   ],
   openGraph: {
-    title: "Marvin Okongo - Full Stack Developer",
-    description: "Checkout Marvin's professional portfolio showcasing his fullstack web and mobile software development expertise🔥",
+    title: "Marvin Okongo - Senior Software Engineer & Technical Lead",
+    description: "Senior Software Engineer specializing in Go-based distributed systems, scalable microservices, and cross-platform mobile apps. Building production-grade solutions for fintech, healthcare, and social platforms.",
     url: "https://marvin-okongo-portfolio.vercel.app",
     siteName: "Marvin Okongo Portfolio",
     images: [

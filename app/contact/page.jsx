@@ -13,14 +13,14 @@ const contactInfo = [
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
-    description: '(+254) 738 376 991',
-    link: 'tel:+254738376991'
+    description: '(+254) 720 538 053',
+    link: 'tel:+254720538053'
   },
   {
     icon: <FaEnvelope />,
     title: 'Email',
-    description: 'marvinsammyke@gmail.com',
-    link: 'mailto:marvinsammyke@gmail.com'
+    description: 'okongomarvin971@gmail.com',
+    link: 'mailto:okongomarvin971@gmail.com'
   },
   {
     icon: <FaMapMarkedAlt />,
@@ -185,7 +185,7 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1, 
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" }
+        transition: { delay: 0.8, duration: 0.3, ease: "easeIn" }
       }}
       className="py-6"
     >
@@ -199,7 +199,7 @@ const Contact = () => {
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                I deliver exceptional web, UI/UX, mobile development, and SEO solutions, transforming your vision into impactful digital experiences that drive your business forward.
+                I build high-performance backend systems, full-stack web apps, and cross-platform mobile solutions for fintech, healthcare, and growth-stage startups. Let's build something that scales.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -251,10 +251,12 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="web-development">Web Development</SelectItem>
-                    <SelectItem value="ui-ux">UI/UX Design</SelectItem>
-                    <SelectItem value="mobile-development">Mobile Development</SelectItem>
-                    <SelectItem value="consulting">Technical Consulting</SelectItem>
+                    <SelectItem value="backend-systems">Backend & Distributed Systems</SelectItem>
+                    <SelectItem value="web-development">Full Stack Web Development</SelectItem>
+                    <SelectItem value="mobile-development">Mobile App Development</SelectItem>
+                    <SelectItem value="devops">Cloud & DevOps Solutions</SelectItem>
+                    <SelectItem value="database">Database Design & Architecture</SelectItem>
+                    <SelectItem value="consulting">Technical Leadership & Consulting</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
