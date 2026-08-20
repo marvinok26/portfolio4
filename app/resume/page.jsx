@@ -33,51 +33,65 @@ const about = {
 // Experience data
 const experience = {
   title: 'Professional Experience',
-  description: "Demonstrated track record of delivering high-impact software solutions across fintech, healthcare, property management, and social platforms — from startups to production-scale systems.",
+  description: "5+ years building enterprise applications, payment platforms, property management systems, and business integrations across fintech, retail, education, and property sectors.",
   items: [
     {
       company: "Payserve Limited",
-      position: "Technical Lead",
-      duration: "05/2024 – Present",
+      position: "Technical Lead / DevOps",
+      duration: "03/2024 – Present",
       highlights: [
-        "Lead a microservice estate of ~19 Node services covering invoicing, levy management, revenue, messaging, and water/power metering, fronted by React portals for residents, landlords, and revenue teams",
-        "Design REST APIs and background workers with predictable contracts across teams",
-        "Implement M-Pesa/Daraja, email, and SMS integrations for transaction workflows",
-        "Improve service reliability through structured logging and queue-based processing on RabbitMQ and BullMQ, with async job handling and retry semantics",
-        "Optimize MongoDB/PostgreSQL queries and indexes under growing production load"
+        "Build a cloud-based property management platform letting landlords and property managers run residential and commercial portfolios from one system",
+        "Design REST APIs for authentication, payment processing, inventory management, and asynchronous background jobs",
+        "Implement enterprise authentication with RBAC, MFA, audit logging, and session security",
+        "Improve data access patterns across MongoDB and PostgreSQL to absorb rising transaction volumes",
+        "Deliver client solutions across Laravel, .NET, JavaScript, and Node.js environments, integrating third-party payment providers and business services"
+      ]
+    },
+    {
+      company: "Zetech University",
+      position: "System Administrator / Developer",
+      duration: "03/2026 – 06/2026",
+      highlights: [
+        "Built integrations synchronizing data between Moodle, the Student Management System, Microsoft Dynamics 365 Business Central, and internal university systems",
+        "Built an automated suspension engine synchronizing finance and academic status across systems",
+        "Corrected over 38,000 inconsistent usernames in production without downtime",
+        "Automated synchronization processes that previously required manual intervention"
+      ]
+    },
+    {
+      company: "Podium Streak",
+      position: "Software Engineer / DevOps",
+      duration: "11/2022 – 01/2024",
+      highlights: [
+        "Developed a cloud-based POS platform for salons, barbershops, supermarkets, restaurants, pharmacies, and other retail businesses covering sales, inventory, payments, and financial management",
+        "Built backend services and scalable REST APIs using ASP.NET Core (C#)",
+        "Integrated QuickBooks, KRA eTIMS, and Business Central for accounting, tax compliance, and ERP synchronization",
+        "Implemented local and international payment integrations, including reusable multi-tenant M-Pesa payment services",
+        "Designed contract-first APIs enabling parallel frontend and backend development",
+        "Implemented background jobs for invoice synchronization, payment callbacks, notifications, and image processing"
       ]
     },
     {
       company: "Belva Digital",
-      position: "Software Developer",
-      duration: "12/2021 – 03/2024",
+      position: "Software Engineer",
+      duration: "02/2022 – 11/2022",
       highlights: [
-        "Built client-facing applications using Laravel, Go, and Python for campaign and business platforms: Pika na Power, ViuTravel, Co-op Bank, KPLC",
-        "Designed relational database schemas in MySQL/PostgreSQL with attention to performance, normalization, and reporting",
-        "Worked with cloud deployment contexts including AWS and Azure-hosted workflows",
-        "Refactored backend modules to improve maintainability and reduce response-time bottlenecks"
+        "Developed Laravel-based business systems and administration portals",
+        "Built REST APIs consumed by web applications",
+        "Designed relational database schemas using MySQL and PostgreSQL",
+        "Delivered client solutions across Laravel, Go, and Node.js environments",
+        "Participated in deployments, production support, and feature delivery"
       ]
     },
     {
       company: "Deveint Limited",
-      position: "Software Developer",
-      duration: "05/2021 – 11/2021",
+      position: "Software Engineer",
+      duration: "04/2021 – 01/2022",
       highlights: [
-        "Built backend services in Go for core business logic and API endpoints",
-        "Delivered supporting Python services for integrations and workflow-specific backend tasks",
-        "Integrated and maintained APIs consumed by Flutter, React, and Next.js applications",
-        "Designed data models and query patterns to improve consistency and developer onboarding speed"
-      ]
-    },
-    {
-      company: "Soft IQ Technologies Ltd",
-      position: "Software Developer",
-      duration: "03/2021 – 08/2021",
-      highlights: [
-        "Developed operational dashboards using React and FastAPI for logistics and internal reporting",
-        "Implemented JWT-based authentication and admin features with role-aware dashboard behavior",
-        "Configured Linux server workflows including SSH deployment and Nginx service configuration",
-        "Assisted with integration connecting business processes to Microsoft Dynamics 365"
+        "Built backend services using Go (Gin) for business applications consumed by Flutter, React, and Next.js clients",
+        "Designed scalable backend architectures and optimized SQL database performance",
+        "Developed workflow automation tools supporting internal business operations",
+        "Supported production deployments and ongoing maintenance"
       ]
     }
   ]

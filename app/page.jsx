@@ -8,7 +8,7 @@ import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
-const CV_FILE_URL = '/assets/dotnet_Software_Engineer_Marvin_Okongo_CV.pdf';
+const CV_FILE_URL = '/assets/Marvin_Okongo_Software_Engineer_CV.pdf';
 
 const Home = () => {
   const downloadFile = async (url) => {
