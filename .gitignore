@@ -36,3 +36,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CV source PDFs kept locally at the repo root; the CV the site serves lives in
+# public/assets/ and is tracked there.
+/*.pdf

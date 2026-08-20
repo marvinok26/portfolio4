@@ -2,7 +2,21 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Rate limiting implementation (simple in-memory solution)
+// The message body is attacker-controlled, so escape it before it goes into the
+// HTML part of the email. Without this, a submission can inject arbitrary markup
+// into the inbox that renders it.
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Rate limiting. NOTE: this Map lives in a single serverless instance, so it
+// caps bursts against one instance rather than enforcing a global quota. Move it
+// to Redis (or a hosted rate limiter) if a hard limit is required.
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour window
 const MAX_EMAILS_PER_IP = 5; // 5 emails per IP per hour
 const ipEmailCountMap = new Map();
@@ -78,7 +92,7 @@ export async function POST(request) {
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'your-site@example.com',
       to: process.env.EMAIL_TO || 'okongomarvin971@gmail.com',
-      subject: `Portfolio Contact: ${formData.service} inquiry from ${formData.firstname} ${formData.lastname}`,
+      subject: `Portfolio Contact: ${formData.service} inquiry from ${formData.firstname} ${formData.lastname}`.replace(/[\r\n]+/g, ' '),
       replyTo: formData.email,
       text: `
 Name: ${formData.firstname} ${formData.lastname}
@@ -91,12 +105,12 @@ ${formData.message}
       `,
       html: `
 <h2>New Contact Form Submission</h2>
-<p><strong>Name:</strong> ${formData.firstname} ${formData.lastname}</p>
-<p><strong>Email:</strong> ${formData.email}</p>
-<p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
-<p><strong>Service Requested:</strong> ${formData.service}</p>
+<p><strong>Name:</strong> ${escapeHtml(formData.firstname)} ${escapeHtml(formData.lastname)}</p>
+<p><strong>Email:</strong> ${escapeHtml(formData.email)}</p>
+<p><strong>Phone:</strong> ${escapeHtml(formData.phone) || 'Not provided'}</p>
+<p><strong>Service Requested:</strong> ${escapeHtml(formData.service)}</p>
 <h3>Message:</h3>
-<p>${formData.message.replace(/\n/g, '<br>')}</p>
+<p>${escapeHtml(formData.message).replace(/\n/g, '<br>')}</p>
       `,
     };
     
