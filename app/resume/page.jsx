@@ -1,10 +1,13 @@
 "use client";
 
-import { FaJs, FaReact, FaNodeJs, FaPhp, FaAws } from "react-icons/fa";
+import { FaJs, FaReact, FaNodeJs, FaPhp, FaAws, FaMicrosoft, FaGitAlt, FaLinux } from "react-icons/fa";
 import {
   SiTailwindcss, SiNextdotjs, SiPython, SiMysql, SiMongodb,
   SiPostgresql, SiDocker, SiTypescript,
-  SiGo, SiVuedotjs, SiRedis, SiKubernetes, SiFlutter, SiGrafana
+  SiGo, SiVuedotjs, SiRedis, SiKubernetes, SiFlutter, SiGrafana,
+  SiDotnet, SiSharp, SiLaravel, SiLivewire, SiAlpinedotjs,
+  SiExpress, SiFastify, SiRabbitmq, SiVite, SiElectron,
+  SiJenkins, SiNginx, SiGithubactions, SiPrometheus
 } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -16,7 +19,7 @@ import './page.css'
 // About data
 const about = {
   title: "Professional Profile",
-  description: "Technical Lead specializing in Golang-based distributed systems and high-performance backend architectures. Expert in building scalable microservices, low-latency APIs, and cloud-native infrastructure across fintech, healthcare, property management, and social platforms.",
+  description: "Technical Lead building distributed systems and high-performance backend architectures across Go, .NET and Node.js. Experienced in scalable microservices, low-latency APIs, clean-architecture service design, and cloud-native infrastructure spanning fintech, healthcare, property management, retail and social platforms.",
   info: [
     { fieldName: "Name", fieldValue: "Marvin Okongo" },
     { fieldName: "Location", fieldValue: "Nairobi, Kenya" },
@@ -37,10 +40,10 @@ const experience = {
       position: "Technical Lead",
       duration: "05/2024 – Present",
       highlights: [
-        "Build and maintain production services for invoicing, payment workflows, and resident operations using Go, Node.js, React, and React Native",
+        "Lead a microservice estate of ~19 Node services covering invoicing, levy management, revenue, messaging, and water/power metering, fronted by React portals for residents, landlords, and revenue teams",
         "Design REST APIs and background workers with predictable contracts across teams",
         "Implement M-Pesa/Daraja, email, and SMS integrations for transaction workflows",
-        "Improve service reliability through structured logging, queue-based processing, and async job handling",
+        "Improve service reliability through structured logging and queue-based processing on RabbitMQ and BullMQ, with async job handling and retry semantics",
         "Optimize MongoDB/PostgreSQL queries and indexes under growing production load"
       ]
     },
@@ -117,6 +120,10 @@ const strengths = [
     body: "Strong understanding of concurrency, memory efficiency, and high-performance backend design using Go — goroutines, channels, and context handling."
   },
   {
+    title: "Clean Architecture on .NET",
+    body: "Builds ASP.NET Core services with layered domain/application/infrastructure separation, CQRS via MediatR, FluentValidation pipelines, EF Core persistence, and xUnit-tested domain logic."
+  },
+  {
     title: "Platform Engineering",
     body: "Experienced building developer tools, internal frameworks, and CLI utilities (Cobra, Viper) to streamline workflows and reduce boilerplate."
   },
@@ -129,28 +136,53 @@ const strengths = [
 // Skills data
 const skills = {
   title: "Technical Skills",
-  description: "Specialized across backend systems, frontend, mobile, databases, and cloud infrastructure",
+  description: "Specialized across backend systems, .NET and Go services, frontend, mobile, databases, messaging, and cloud infrastructure",
   skillList: [
+    // Languages
     { icon: <SiGo />, name: "Go (Golang)" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiPython />, name: "Python" },
-    { icon: <FaPhp />, name: "PHP / Laravel" },
-    { icon: <FaReact />, name: "React" },
+    { icon: <SiSharp />, name: "C#" },
+    { icon: <FaJs />, name: "JavaScript" },
     { icon: <SiTypescript />, name: "TypeScript" },
-    { icon: <SiVuedotjs />, name: "Vue.js" },
+    { icon: <SiPython />, name: "Python" },
+    { icon: <FaPhp />, name: "PHP" },
+    // Backend frameworks
+    { icon: <SiDotnet />, name: ".NET / ASP.NET Core" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiExpress />, name: "Express" },
+    { icon: <SiFastify />, name: "Fastify" },
+    { icon: <SiLaravel />, name: "Laravel" },
+    // Frontend
+    { icon: <FaReact />, name: "React" },
     { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <SiVuedotjs />, name: "Vue.js" },
+    { icon: <SiLivewire />, name: "Livewire" },
+    { icon: <SiAlpinedotjs />, name: "Alpine.js" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <SiVite />, name: "Vite" },
+    // Mobile & desktop
     { icon: <SiFlutter />, name: "Flutter" },
     { icon: <FaReact />, name: "React Native" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <SiElectron />, name: "Electron" },
+    // Data
     { icon: <SiPostgresql />, name: "PostgreSQL" },
-    { icon: <SiMongodb />, name: "MongoDB" },
     { icon: <SiMysql />, name: "MySQL" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <FaMicrosoft />, name: "SQL Server" },
     { icon: <SiRedis />, name: "Redis" },
+    // Messaging & integrations
+    { icon: <SiRabbitmq />, name: "RabbitMQ" },
+    { icon: <FaNodeJs />, name: "M-Pesa / Daraja" },
+    // DevOps & tooling
     { icon: <SiDocker />, name: "Docker" },
     { icon: <SiKubernetes />, name: "Kubernetes" },
+    { icon: <SiJenkins />, name: "Jenkins" },
+    { icon: <SiGithubactions />, name: "GitHub Actions" },
+    { icon: <SiNginx />, name: "Nginx" },
+    { icon: <FaLinux />, name: "Linux" },
+    { icon: <FaGitAlt />, name: "Git" },
     { icon: <FaAws />, name: "AWS" },
-    { icon: <SiGrafana />, name: "Grafana / Prometheus" },
+    { icon: <SiPrometheus />, name: "Prometheus" },
+    { icon: <SiGrafana />, name: "Grafana" },
   ]
 };
 

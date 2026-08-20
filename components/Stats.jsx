@@ -9,12 +9,12 @@ const stats = [
         suffix: "+"
     },
     {
-        num: 20,
+        num: 25,
         text: "Projects completed",
         suffix: "+"
     },
     {
-        num: 20,
+        num: 35,
         text: "Technologies mastered",
         suffix: "+"
     },

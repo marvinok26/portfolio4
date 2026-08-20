@@ -8,7 +8,7 @@ import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
-const CV_FILE_URL = '/assets/Go_Software_Engineer_Marvin_Okongo_CV.pdf';
+const CV_FILE_URL = '/assets/dotnet_Software_Engineer_Marvin_Okongo_CV.pdf';
 
 const Home = () => {
   const downloadFile = async (url) => {
@@ -42,7 +42,7 @@ const Home = () => {
               Hello I'm <br /> <span>Marvin <span className="text-accent">Okongo</span></span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Technical Lead specializing in Golang-based distributed systems and high-performance backend architectures. Expert in building scalable microservices, low-latency APIs, and cloud-native infrastructure across fintech, healthcare, and social platforms.
+              Technical Lead building distributed systems and high-performance backend architectures across Go, .NET and Node.js — scalable microservices, low-latency APIs, and cloud-native infrastructure for fintech, healthcare, property management, retail and social platforms.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

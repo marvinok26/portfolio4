@@ -1,7 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
+@theme {
+  /* Breakpoints: sm/md keep their defaults, `slg` is custom, xl is narrowed
+     from 1280px, and 2xl is dropped (unused). */
+  --breakpoint-slg: 960px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: initial;
+
+  /* Brand palette */
+  --color-primary: #1c1c22;
+  --color-accent: #00ff99;
+  --color-accent-hover: #00e187;
+
+  /* Type */
+  --font-primary: var(--font-jetbrainsMono);
+}
+
+/* v3's `container` config (center + 15px padding) has no v4 equivalent,
+   so the utility is redefined here. */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
+}
 
 @layer base {
   body {

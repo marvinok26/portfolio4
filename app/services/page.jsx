@@ -8,13 +8,13 @@ const services = [
   {
     num: '01',
     title: 'Backend & Distributed Systems',
-    description: 'Design and build high-performance backend systems using Go (Gin, Fiber, gRPC) and Node.js. Specializing in scalable microservices, event-driven architectures, low-latency APIs, and concurrent systems for fintech, healthcare, and social platforms.',
+    description: 'Design and build high-performance backend systems in Go (Gin, gRPC), ASP.NET Core and Node.js (Express, Fastify). Specializing in scalable microservices, event-driven architectures over RabbitMQ and BullMQ, low-latency APIs, and concurrent systems for fintech, healthcare, property management and retail.',
     href: "/contact",
   },
   {
     num: '02',
     title: 'Full Stack Web Development',
-    description: 'End-to-end web solutions using React, Vue.js, Next.js, and TypeScript on the frontend, backed by Go, Node.js, Python, or Laravel. Building secure, scalable, production-grade applications with clean API contracts and seamless UX.',
+    description: 'End-to-end web solutions using React, Vue.js, Next.js, Livewire and TypeScript on the frontend, backed by Go, .NET, Node.js, Python or Laravel. Building secure, scalable, production-grade applications with clean API contracts, clean-architecture service layers and seamless UX.',
     href: "/contact",
   },
   {
@@ -32,7 +32,7 @@ const services = [
   {
     num: '05',
     title: 'Database Design & Architecture',
-    description: 'Expert data modeling across PostgreSQL, MongoDB, MySQL, Redis, and vector databases. Designing efficient schemas, optimizing query performance, implementing caching strategies, and ensuring data integrity under growing production load.',
+    description: 'Expert data modeling across PostgreSQL, MongoDB, MySQL, SQL Server and Redis, with EF Core, GORM, Eloquent and Mongoose. Designing efficient schemas, optimizing query performance, implementing caching strategies, and ensuring data integrity under growing production load.',
     href: "/contact",
   },
   {

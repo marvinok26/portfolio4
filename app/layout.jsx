@@ -17,13 +17,18 @@ export const metadata = {
     template: "%s | Marvin Okongo",
     default: "Marvin Okongo - Senior Software Engineer & Technical Lead",
   },
-  description: "Portfolio of Marvin Okongo — Senior Software Engineer and Technical Lead specializing in Go (Golang) distributed systems, high-performance backend APIs, full-stack web, and cross-platform mobile development.",
+  description: "Portfolio of Marvin Okongo — Senior Software Engineer and Technical Lead building distributed systems and high-performance backend APIs across Go, .NET and Node.js, plus full-stack web and cross-platform mobile development.",
   keywords: [
     "Marvin Okongo",
     "Senior Software Engineer",
     "Technical Lead",
     "Go Developer",
     "Golang",
+    ".NET Developer",
+    "ASP.NET Core",
+    "C# Developer",
+    "Laravel Developer",
+    "PHP",
     "Backend Engineer",
     "Distributed Systems",
     "Microservices",
@@ -37,7 +42,7 @@ export const metadata = {
   ],
   openGraph: {
     title: "Marvin Okongo - Senior Software Engineer & Technical Lead",
-    description: "Senior Software Engineer specializing in Go-based distributed systems, scalable microservices, and cross-platform mobile apps. Building production-grade solutions for fintech, healthcare, and social platforms.",
+    description: "Senior Software Engineer building distributed systems, scalable microservices and cross-platform mobile apps across Go, .NET and Node.js. Production-grade solutions for fintech, healthcare, property management, retail and social platforms.",
     url: "https://marvin-okongo-portfolio.vercel.app",
     siteName: "Marvin Okongo Portfolio",
     images: [
