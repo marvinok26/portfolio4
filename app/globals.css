@@ -17,6 +17,13 @@
   --font-primary: var(--font-jetbrainsMono);
 }
 
+/* Measured height of the site header at the xl breakpoint (py-12 plus the
+   logo/nav row). Pages that pin themselves to the viewport subtract this to
+   work out the height they have left. */
+:root {
+  --header-height-xl: 140px;
+}
+
 /* v3's `container` config (center + 15px padding) has no v4 equivalent,
    so the utility is redefined here. */
 @utility container {
